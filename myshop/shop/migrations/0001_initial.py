@@ -48,15 +48,10 @@ class Migration(migrations.Migration):
                 ("slug", models.SlugField(max_length=200, unique=True)),
                 (
                     "image",
-                    models.ImageField(
-                        blank=True, upload_to="products/%Y/%m/%d"
-                    ),
+                    models.ImageField(blank=True, upload_to="products/%Y/%m/%d"),
                 ),
                 ("description", models.TextField(blank=True)),
-                (
-                    "price",
-                    models.DecimalField(decimal_places=2, max_digits=10),
-                ),
+                ("price", models.DecimalField(decimal_places=2, max_digits=10),),
                 ("available", models.BooleanField(default=True)),
                 ("created", models.DateTimeField(auto_now_add=True)),
                 ("updated", models.DateTimeField(auto_now=True)),
